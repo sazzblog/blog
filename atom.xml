@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.sazz.fail</id>
     <title>Sazz&apos;s Blog</title>
-    <updated>2020-05-29T14:26:59.802Z</updated>
+    <updated>2020-05-29T14:30:24.768Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.sazz.fail"/>
     <link rel="self" href="https://blog.sazz.fail/atom.xml"/>
@@ -42,7 +42,7 @@
         <id>https://blog.sazz.fail/post/first-discord-bot/</id>
         <link href="https://blog.sazz.fail/post/first-discord-bot/">
         </link>
-        <updated>2020-05-28T04:40:45.000Z</updated>
+        <updated>2020-05-27T17:40:45.000Z</updated>
         <summary type="html"><![CDATA[<p>Quer criar aquele bot dahora que você sempre sonhos e não quer ver os tutoriais do Pedro Ricardo porque ele é um bosta? Aqui está a solução!</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Quer criar aquele bot dahora que você sempre sonhos e não quer ver os tutoriais do Pedro Ricardo porque ele é um bosta? Aqui está a solução!</p>
@@ -108,6 +108,14 @@ const client = new Discord.Client()
 </code></pre>
 <p>Ok, essa parte é super importante, vá até a parte de <code>Criando o seu Bot`, e lá, na parte do seu bot, procure por</code>Token<code>e clique para revelar o seu token</code>Click to Reveal Token<code>, agora copie e em vez de</code>'Seu Token``, coloque realmente o seu token que você copiou.<br>
 <strong>IMPORTANTE: Esse token é secreto! Não compartilhe ele com ninguém, ele da controle total ao seu bot.</strong></p>
+<h2 id="explicação">Explicação</h2>
+<p>Código completo:</p>
+<pre><code class="language-js">const Discord = require('discord.js')
+const client = new Discord.Client()
+
+client.login('Seu Token')
+</code></pre>
+<p>Primeiro, chamamos a depedência do discord.js, e criamos um client, agora usamos o método <code>login</code> do client para fazer login usando o token.</p>
 <p>Agora salve usando <code>CTRL+S</code> e volte ao terminel e digite <code>node index.js</code>, e se tudo der certo, o seu bot ficou online! YAY</p>
 <h1 id="conclusão">Conclusão</h1>
 <p>Criamos o nosso primeiro bot, bem, se você quiser fazer outras coisas, como comandos, recomendo que você veja no Youtube, já que provavelmente eles vão usar esse mesmo código base. Valeu!</p>

@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Seu primeiro bot no Discord usando Javascript em 5 minutos! | Sazz&#39;s Blog</title>
-<link rel="shortcut icon" href="https://blog.sazz.fail/favicon.ico?v=1590762414977">
+<link rel="shortcut icon" href="https://blog.sazz.fail/favicon.ico?v=1590762620967">
 <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.sazz.fail/styles/main.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -67,7 +67,7 @@
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 28-05-2020 ·
+                        · 27-05-2020 ·
                     </time>
                     
                         <a href="https://blog.sazz.fail/tag/twjX0RVLw/" class="post-tags">
@@ -151,6 +151,14 @@ const client = new Discord.Client()
 </code></pre>
 <p>Ok, essa parte é super importante, vá até a parte de <code>Criando o seu Bot`, e lá, na parte do seu bot, procure por</code>Token<code>e clique para revelar o seu token</code>Click to Reveal Token<code>, agora copie e em vez de</code>'Seu Token``, coloque realmente o seu token que você copiou.<br>
 <strong>IMPORTANTE: Esse token é secreto! Não compartilhe ele com ninguém, ele da controle total ao seu bot.</strong></p>
+<h2 id="explicação">Explicação</h2>
+<p>Código completo:</p>
+<pre><code class="language-js">const Discord = require('discord.js')
+const client = new Discord.Client()
+
+client.login('Seu Token')
+</code></pre>
+<p>Primeiro, chamamos a depedência do discord.js, e criamos um client, agora usamos o método <code>login</code> do client para fazer login usando o token.</p>
 <p>Agora salve usando <code>CTRL+S</code> e volte ao terminel e digite <code>node index.js</code>, e se tudo der certo, o seu bot ficou online! YAY</p>
 <h1 id="conclusão">Conclusão</h1>
 <p>Criamos o nosso primeiro bot, bem, se você quiser fazer outras coisas, como comandos, recomendo que você veja no Youtube, já que provavelmente eles vão usar esse mesmo código base. Valeu!</p>
