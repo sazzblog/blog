@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.sazz.fail</id>
     <title>Sazz&apos;s Blog</title>
-    <updated>2020-05-29T14:24:51.677Z</updated>
+    <updated>2020-05-29T14:26:59.802Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.sazz.fail"/>
     <link rel="self" href="https://blog.sazz.fail/atom.xml"/>
@@ -42,7 +42,7 @@
         <id>https://blog.sazz.fail/post/first-discord-bot/</id>
         <link href="https://blog.sazz.fail/post/first-discord-bot/">
         </link>
-        <updated>2020-05-28T15:40:45.000Z</updated>
+        <updated>2020-05-28T04:40:45.000Z</updated>
         <summary type="html"><![CDATA[<p>Quer criar aquele bot dahora que você sempre sonhos e não quer ver os tutoriais do Pedro Ricardo porque ele é um bosta? Aqui está a solução!</p>
 ]]></summary>
         <content type="html"><![CDATA[<p>Quer criar aquele bot dahora que você sempre sonhos e não quer ver os tutoriais do Pedro Ricardo porque ele é um bosta? Aqui está a solução!</p>
@@ -106,7 +106,7 @@ const client = new Discord.Client()
 <p>Agora temos o client, agora é finalmente a hora de....deixar o bot online! 🎉</p>
 <pre><code class="language-js">client.login('Seu Token')
 </code></pre>
-<p>Ok, essa parte é super importante, vá até a parte de <code>Criando o seu Token</code>, e lá, na parte do seu bot, procure por <code>Token</code> e clique para revelar o seu token <code>Click to Reveal Token</code>, agora copie e em vez de <code>'Seu Token</code>, coloque realmente o seu token que você copiou.<br>
+<p>Ok, essa parte é super importante, vá até a parte de <code>Criando o seu Bot`, e lá, na parte do seu bot, procure por</code>Token<code>e clique para revelar o seu token</code>Click to Reveal Token<code>, agora copie e em vez de</code>'Seu Token``, coloque realmente o seu token que você copiou.<br>
 <strong>IMPORTANTE: Esse token é secreto! Não compartilhe ele com ninguém, ele da controle total ao seu bot.</strong></p>
 <p>Agora salve usando <code>CTRL+S</code> e volte ao terminel e digite <code>node index.js</code>, e se tudo der certo, o seu bot ficou online! YAY</p>
 <h1 id="conclusão">Conclusão</h1>
