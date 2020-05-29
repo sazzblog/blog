@@ -1,0 +1,213 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Seu primeiro bot no Discord usando Javascript em 5 minutos! | Sazz&#39;s Blog</title>
+<link rel="shortcut icon" href="https://blog.sazz.fail/favicon.ico?v=1590762278875">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.sazz.fail/styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Sazz&#39;s Blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            Home
+                        </a>
+                    
+                </div>
+            
+        </div>
+    </div>
+</nav>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Seu primeiro bot no Discord usando Javascript em 5 minutos!
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 28-05-2020 ·
+                    </time>
+                    
+                        <a href="https://blog.sazz.fail/tag/twjX0RVLw/" class="post-tags">
+                            # bot
+                        </a>
+                    
+                        <a href="https://blog.sazz.fail/tag/mvGhVfy7xn/" class="post-tags">
+                            # discord
+                        </a>
+                    
+                        <a href="https://blog.sazz.fail/tag/9LEOknKUb3/" class="post-tags">
+                            # javascript
+                        </a>
+                    
+                        <a href="https://blog.sazz.fail/tag/6cmMAAu6Ks/" class="post-tags">
+                            # discordjs
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>Quer criar aquele bot dahora que você sempre sonhos e não quer ver os tutoriais do Pedro Ricardo porque ele é um bosta? Aqui está a solução!</p>
+<!-- more -->
+<h1 id="requisitos">Requisitos</h1>
+<p>Você vai precisar de...</p>
+<ul>
+<li>NodeJS (https://nodejs.org/en/download/ | Baixe a versão LTS 👍)</li>
+<li>Visual Studio Code (https://visualstudio.microsoft.com/downloads/ | Baixe a versão community 👍 )</li>
+<li>(Opcional) Eu realmente recomendo que você tenha conhecimento básico de Javascript, já que eu sou vou explicar a parte que realmente vai criar seu bot, plz não só copie, mas entenda também.</li>
+</ul>
+<h1 id="1-criando-o-bot">1. Criando o bot...</h1>
+<p>Bem, você sempre teve a dúvida de como é pra criar um perfil de bot no Discord? Sinto te depecionar mais não é tipo wow, é bem meh.</p>
+<ul>
+<li>
+<p>Vá em https://discord.com/developers/applications (aka painel de desenvolvedor do Discord)</p>
+</li>
+<li>
+<p>Clique em New Application</p>
+</li>
+<li>
+<p>Coloque o nome do seu Bot (e o código do 2FA se você tiver oof)</p>
+<p>...e WOW! Pera, ainda não terminou, mas você acabou de criar o que seria a parte mãe do seu bot, vamos continuar</p>
+<ul>
+<li>Coloque uma foto dahora (eu preciso te explicar como colocar a foto?)</li>
+<li>Vá até Bot</li>
+<li>Clique em Add Bot</li>
+<li>Depois confirme, e....</li>
+</ul>
+</li>
+</ul>
+<p>AE! Você agora acaba de criar o seu bot, hora de convidar ele para seu servidor.</p>
+<h1 id="2-convidando-o-bot-para-seu-servidor">2. Convidando o bot para seu servidor...</h1>
+<p>Para convidar o seu bot, é até que bem simples, precisamos usar um permission calculator (e você vai entender esse nome mais tarde)</p>
+<ul>
+<li>Volte até aquela parte de antes de criar o bot, e procure por <code>Client ID</code></li>
+<li>Copie esse <code>Client ID</code>.</li>
+<li>Entre nesse link https://finitereality.github.io/permissions-calculator/?v=0</li>
+</ul>
+<p>Agora, vamos começar a definir as permissões do seu bot, se você tiver o 2FA ativado (aka verificação de 2 etapas), você pode clicar nas permissões que estão laranjas, mas se você não tiver, você pode selecionar aquele botão que está em cima de todas as permissões, o <code>Select Non Administrative</code>, e você tera praticamente diversas permissões que o seu bot vai poder usar ao entrar no servidor.</p>
+<p>Ok, agora vá até a seção de Invite a Bot e cole seu <code>Client ID</code> em <code>Client ID</code>, e clique em <strong>Add</strong>, você vai ser redirecionado para um link de invite, selecione o servidor que você quer adicionar, confirme e wow, agora o seu bot super dahora está no seu servidor, mas ele está offline, então vamos mudar isso.</p>
+<h1 id="3-iniciando-o-seu-projeto">3. Iniciando o seu projeto...</h1>
+<p>Agora, crie uma pasta para seu Bot e abra o Visual Studio Code, após isso clique em <code>File</code> lá em cima e depois em <code>Open Folder</code>, procure pelo lugar da sua pasta e clique nela, agora sim vamos começar.</p>
+<p>Quando ele carregar a sua pasta, vá em <code>Terminal</code> (no mesmo lugar aonde estava a aba de <code>File</code>, lá em cima) e clique em <code>New Terminal</code>, nice! Agora, você criou um novo terminal que será muito importante.</p>
+<p>Execute o comando <code>npm init</code>, se der um erro que não existe, por favor verifique a aba de requisitos lá em cima.<br>
+Agora, ele vai pedir alguns dados do eu projeto, os obrigatorios são <code>name, description, author, version, entry file</code>, preencha eles, o resto caso você não saiba, apenas deixe em branco.<br>
+PS: <strong>deixe como padrão o entry file como index.js</strong></p>
+<p>Se der tudo certo, ele acabou de criar um arquivo chamado <code>package.json</code> na sua pasta, agora vamos começar a instalar as depedências!</p>
+<h1 id="4-instalando-as-depedências">4. Instalando as depedências...</h1>
+<p>Vamos usar essas depedências:</p>
+<ul>
+<li>discord.js</li>
+</ul>
+<p>Para instalar, apenas use <code>npm install discord.js</code>, agora é só esperar ele terminar de instalar a depedência. Quando isso acontecer, crie um arquivo chamado index.js e vamos começar a programar.</p>
+<h1 id="5-programando-o-seu-bot">5. Programando o seu bot....</h1>
+<p>Entre no arquivo de index.js e vamos começar a escrever!<br>
+Vamos começar criando o Client, que é...praticamente o nosso bot.</p>
+<pre><code class="language-js">const Discord = require('discord.js')
+const client = new Discord.Client()
+</code></pre>
+<p>Agora temos o client, agora é finalmente a hora de....deixar o bot online! 🎉</p>
+<pre><code class="language-js">client.login('Seu Token')
+</code></pre>
+<p>Ok, essa parte é super importante, vá até a parte de <code>Criando o seu Token</code>, e lá, na parte do seu bot, procure por <code>Token</code> e clique para revelar o seu token <code>Click to Reveal Token</code>, agora copie e em vez de <code>'Seu Token</code>, coloque realmente o seu token que você copiou.<br>
+<strong>IMPORTANTE: Esse token é secreto! Não compartilhe ele com ninguém, ele da controle total ao seu bot.</strong></p>
+<p>Agora salve usando <code>CTRL+S</code> e volte ao terminel e digite <code>node index.js</code>, e se tudo der certo, o seu bot ficou online! YAY</p>
+<h1 id="conclusão">Conclusão</h1>
+<p>Criamos o nosso primeiro bot, bem, se você quiser fazer outras coisas, como comandos, recomendo que você veja no Youtube, já que provavelmente eles vão usar esse mesmo código base. Valeu!</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.sazz.fail/post/ola-mundo/" class="post-title gt-a-link">
+                    Olá Mundo!
+                </a>
+            </div>
+        
+
+        
+		
+		
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">Welcome to my dear blog, post some things related to programming and other cool things.</div>
+    <div class="social-container">
+        
+            
+                <a href="https://github.com/Sazzo" target="_blank">
+                    <i class="fab fa-github gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+                <a href="https://twitter.com/FelipeSazz" target="_blank">
+                    <i class="fab fa-twitter gt-c-content-color-first"></i>
+                </a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        
+    </div>
+
+</div>
+
+<script>
+    hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.sazz.fail</id>
     <title>Sazz&apos;s Blog</title>
-    <updated>2020-05-29T05:34:33.097Z</updated>
+    <updated>2020-05-29T14:24:51.677Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.sazz.fail"/>
     <link rel="self" href="https://blog.sazz.fail/atom.xml"/>
@@ -35,6 +35,82 @@
 <p>...você espera uma solução? Bem, acho que é só tem uma, paciência.</p>
 <h1 id="conclusão">Conclusão</h1>
 <p>Eu não sei ao certo o rumo desse projeto, se vai andar ou vai parar, mas enfim, assim que conseguir um bom progresso ou tomar uma decisão, eu definitivamente vou postar aqui no Blog. É isso, valeu!</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Seu primeiro bot no Discord usando Javascript em 5 minutos!]]></title>
+        <id>https://blog.sazz.fail/post/first-discord-bot/</id>
+        <link href="https://blog.sazz.fail/post/first-discord-bot/">
+        </link>
+        <updated>2020-05-28T15:40:45.000Z</updated>
+        <summary type="html"><![CDATA[<p>Quer criar aquele bot dahora que você sempre sonhos e não quer ver os tutoriais do Pedro Ricardo porque ele é um bosta? Aqui está a solução!</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Quer criar aquele bot dahora que você sempre sonhos e não quer ver os tutoriais do Pedro Ricardo porque ele é um bosta? Aqui está a solução!</p>
+<!-- more -->
+<h1 id="requisitos">Requisitos</h1>
+<p>Você vai precisar de...</p>
+<ul>
+<li>NodeJS (https://nodejs.org/en/download/ | Baixe a versão LTS 👍)</li>
+<li>Visual Studio Code (https://visualstudio.microsoft.com/downloads/ | Baixe a versão community 👍 )</li>
+<li>(Opcional) Eu realmente recomendo que você tenha conhecimento básico de Javascript, já que eu sou vou explicar a parte que realmente vai criar seu bot, plz não só copie, mas entenda também.</li>
+</ul>
+<h1 id="1-criando-o-bot">1. Criando o bot...</h1>
+<p>Bem, você sempre teve a dúvida de como é pra criar um perfil de bot no Discord? Sinto te depecionar mais não é tipo wow, é bem meh.</p>
+<ul>
+<li>
+<p>Vá em https://discord.com/developers/applications (aka painel de desenvolvedor do Discord)</p>
+</li>
+<li>
+<p>Clique em New Application</p>
+</li>
+<li>
+<p>Coloque o nome do seu Bot (e o código do 2FA se você tiver oof)</p>
+<p>...e WOW! Pera, ainda não terminou, mas você acabou de criar o que seria a parte mãe do seu bot, vamos continuar</p>
+<ul>
+<li>Coloque uma foto dahora (eu preciso te explicar como colocar a foto?)</li>
+<li>Vá até Bot</li>
+<li>Clique em Add Bot</li>
+<li>Depois confirme, e....</li>
+</ul>
+</li>
+</ul>
+<p>AE! Você agora acaba de criar o seu bot, hora de convidar ele para seu servidor.</p>
+<h1 id="2-convidando-o-bot-para-seu-servidor">2. Convidando o bot para seu servidor...</h1>
+<p>Para convidar o seu bot, é até que bem simples, precisamos usar um permission calculator (e você vai entender esse nome mais tarde)</p>
+<ul>
+<li>Volte até aquela parte de antes de criar o bot, e procure por <code>Client ID</code></li>
+<li>Copie esse <code>Client ID</code>.</li>
+<li>Entre nesse link https://finitereality.github.io/permissions-calculator/?v=0</li>
+</ul>
+<p>Agora, vamos começar a definir as permissões do seu bot, se você tiver o 2FA ativado (aka verificação de 2 etapas), você pode clicar nas permissões que estão laranjas, mas se você não tiver, você pode selecionar aquele botão que está em cima de todas as permissões, o <code>Select Non Administrative</code>, e você tera praticamente diversas permissões que o seu bot vai poder usar ao entrar no servidor.</p>
+<p>Ok, agora vá até a seção de Invite a Bot e cole seu <code>Client ID</code> em <code>Client ID</code>, e clique em <strong>Add</strong>, você vai ser redirecionado para um link de invite, selecione o servidor que você quer adicionar, confirme e wow, agora o seu bot super dahora está no seu servidor, mas ele está offline, então vamos mudar isso.</p>
+<h1 id="3-iniciando-o-seu-projeto">3. Iniciando o seu projeto...</h1>
+<p>Agora, crie uma pasta para seu Bot e abra o Visual Studio Code, após isso clique em <code>File</code> lá em cima e depois em <code>Open Folder</code>, procure pelo lugar da sua pasta e clique nela, agora sim vamos começar.</p>
+<p>Quando ele carregar a sua pasta, vá em <code>Terminal</code> (no mesmo lugar aonde estava a aba de <code>File</code>, lá em cima) e clique em <code>New Terminal</code>, nice! Agora, você criou um novo terminal que será muito importante.</p>
+<p>Execute o comando <code>npm init</code>, se der um erro que não existe, por favor verifique a aba de requisitos lá em cima.<br>
+Agora, ele vai pedir alguns dados do eu projeto, os obrigatorios são <code>name, description, author, version, entry file</code>, preencha eles, o resto caso você não saiba, apenas deixe em branco.<br>
+PS: <strong>deixe como padrão o entry file como index.js</strong></p>
+<p>Se der tudo certo, ele acabou de criar um arquivo chamado <code>package.json</code> na sua pasta, agora vamos começar a instalar as depedências!</p>
+<h1 id="4-instalando-as-depedências">4. Instalando as depedências...</h1>
+<p>Vamos usar essas depedências:</p>
+<ul>
+<li>discord.js</li>
+</ul>
+<p>Para instalar, apenas use <code>npm install discord.js</code>, agora é só esperar ele terminar de instalar a depedência. Quando isso acontecer, crie um arquivo chamado index.js e vamos começar a programar.</p>
+<h1 id="5-programando-o-seu-bot">5. Programando o seu bot....</h1>
+<p>Entre no arquivo de index.js e vamos começar a escrever!<br>
+Vamos começar criando o Client, que é...praticamente o nosso bot.</p>
+<pre><code class="language-js">const Discord = require('discord.js')
+const client = new Discord.Client()
+</code></pre>
+<p>Agora temos o client, agora é finalmente a hora de....deixar o bot online! 🎉</p>
+<pre><code class="language-js">client.login('Seu Token')
+</code></pre>
+<p>Ok, essa parte é super importante, vá até a parte de <code>Criando o seu Token</code>, e lá, na parte do seu bot, procure por <code>Token</code> e clique para revelar o seu token <code>Click to Reveal Token</code>, agora copie e em vez de <code>'Seu Token</code>, coloque realmente o seu token que você copiou.<br>
+<strong>IMPORTANTE: Esse token é secreto! Não compartilhe ele com ninguém, ele da controle total ao seu bot.</strong></p>
+<p>Agora salve usando <code>CTRL+S</code> e volte ao terminel e digite <code>node index.js</code>, e se tudo der certo, o seu bot ficou online! YAY</p>
+<h1 id="conclusão">Conclusão</h1>
+<p>Criamos o nosso primeiro bot, bem, se você quiser fazer outras coisas, como comandos, recomendo que você veja no Youtube, já que provavelmente eles vão usar esse mesmo código base. Valeu!</p>
 ]]></content>
     </entry>
     <entry>
